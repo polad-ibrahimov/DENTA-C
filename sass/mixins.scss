@@ -1,0 +1,103 @@
+@import 'fonts';
+@import 'variable';
+@mixin btn {
+    font-family: Oswald-Medium;
+    padding: 7px 35px;
+    font-size: 16px;
+    line-height: 28px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: $colorWhite;
+    background-color: $color1;
+    border-color: $color1;
+    border-width: 2px;
+    cursor: pointer;
+    border-radius: 23px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background-color: $color2;
+        border-color: $color2;
+        color: $colorWhite;
+    }
+}
+
+@mixin line {
+    width: 80px;
+    height: 4px;
+    margin: 30px auto 30px;
+    background: $color1;
+}
+
+@mixin dot {
+    margin-left: 27px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    border-radius: 50%;
+    background: rgba(245, 126, 87, 0.5);
+    position: relative;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    &::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        top: -5px;
+        left: -5px;
+        width: 22px;
+        height: 22px;
+        background: rgba(245, 126, 87, 0.22);
+        -webkit-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    &:hover:before {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+    &:hover {
+        background: $color1;
+    }
+}
+
+@mixin color-line {
+    height: 1px;
+    background: rgb(229, 229, 229);
+    position: relative;
+    &::before {
+        content: '';
+        height: 1px;
+        background-color: $color1;
+        width: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+@mixin grid {
+    padding: 20px 30px;
+    background: $color4;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    h6 {
+        color: $color3;
+        line-height: 1.5;
+        font-size: 18px;
+        font-family: Oswald-Regular;
+    }
+    p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: $color5;
+        font-family: Lato-Regular;
+    }
+}

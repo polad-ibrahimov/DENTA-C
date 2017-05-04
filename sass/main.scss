@@ -1,0 +1,2630 @@
+@import 'variable';
+@import 'mixins';
+@import 'fonts';
+@import 'owl';
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Oswald-Regular;
+}
+
+h4 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 46px;
+    color: $color3;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.margin-top-30 {
+    margin-top: 30px;
+}
+
+.margin-top-60 {
+    margin-top: 60px;
+}
+
+.margin-top-100 {
+    margin-top: 100px;
+}
+
+.margin-left-30 {
+    margin-left: 30px;
+}
+
+.margin-bottom-80 {
+    margin-bottom: 80px;
+}
+
+.padding-top-100 {
+    padding-top: 100px;
+}
+
+// btn scroll top
+.scroll-top {
+    display: none;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 26px;
+    background: #f57e57;
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    &:before {
+        font-family: FontAwesome;
+        content: "\f077";
+        outline: none;
+    }
+    &:hover {
+        color: white;
+        background: $color2;
+        text-decoration: none;
+    }
+}
+
+// ############################---HOME--- ############################
+// sidebar menu-----------
+.sidebar-menu {
+    background: $colorWhite;
+    width: 320px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: -350px;
+    top: 0;
+    transition: left 0.5s linear;
+    z-index: 98;
+    position: fixed;
+    padding-top: 100px;
+    overflow: auto;
+    .row {
+        margin: 0;
+        .input-group {
+            input,
+            .btn {
+                height: 50px;
+            }
+            .btn {
+                background: $colorWhite;
+                color: $color1;
+                border-left: none;
+            }
+        }
+    }
+    ul {
+        padding-left: 30px;
+        padding-top: 30px;
+        li {
+            list-style: none;
+            a {
+                text-decoration: none;
+                color: $color1;
+                display: block;
+                padding: 10px;
+                font-weight: bold;
+                .scrollclick {
+                    margin-left: 60%;
+                    font-size: 20px;
+                }
+                .fa-angle-up {
+                    display: none;
+                }
+                .fa-angle-up,
+                .fa-angle-down {
+                    margin-right: 20px;
+                    font-size: 20px;
+                    float: right;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .scrollmenu {
+        display: none;
+        padding-top: 10px;
+        li {
+            a {
+                padding: 10px 10px;
+                &:hover {
+                    font-weight: bold;
+                    &:before {
+                        font-family: FontAwesome;
+                        content: "\f105";
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    position: fixed;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19);
+    left: 18%;
+    top: 10%;
+    display: none;
+    cursor: pointer;
+    z-index: 98;
+    transition: left 0.5s linear;
+    &:before {
+        font-family: FontAwesome;
+        content: '\f00d';
+        text-align: center;
+        font-size: 40px;
+        color: $color2;
+        margin-left: 13px;
+    }
+}
+
+.sidebar-menu.visible {
+    left: 0;
+    transition: left 0.5s linear;
+}
+
+.sidebar {
+    // display: inline-block;
+    cursor: pointer;
+    z-index: 99;
+    position: absolute;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    top: 70px;
+    left: 80px;
+    position: fixed;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sidebar-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 30px;
+        height: 5px;
+        background-color: $color2;
+        margin: 6px 0;
+        transition: 0.4s;
+        border-radius: 5px;
+    }
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+// header section ------------------------------
+header {
+    position: relative;
+    .header-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(141, 184, 194, 0.6);
+    }
+    .top-slider {
+        width: 100%;
+        height: 770px;
+        background: url(../img/topslider/background-01.jpg) no-repeat;
+        background-size: cover;
+        .container {
+            padding-top: 50px;
+            a {
+                color: $colorWhite;
+            }
+        }
+        .slider__dots {
+            margin-top: 80px;
+        }
+    }
+    .padding_top_70 {
+        padding-top: 70px;
+    }
+    .header-icon {
+        width: 50px;
+        height: 50px;
+        background: $color2;
+        border-radius: 50%;
+        color: $colorWhite;
+        text-align: center;
+        float: left;
+        margin-right: 15px;
+        .fa {
+            font-size: 25px;
+            padding-top: 12px;
+        }
+    }
+    .header-body {
+        h1 {
+            color: #fff;
+            line-height: 1.5;
+            font-family: Oswald-Regular;
+            text-transform: uppercase;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        p {
+            color: #fff;
+            line-height: 1.5;
+            font-size: 22px;
+            font-family: inherit;
+            font-weight: 400;
+            padding-bottom: 20px;
+        }
+        a {
+            @include btn;
+            font-family: Oswald-Medium;
+        }
+    }
+    .header-consultation {
+        max-width: 370px;
+        padding: 23px 42px 28px;
+        background: rgba(33, 33, 33, 0.4);
+        border: 1px solid transparent;
+        border-radius: 5px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        a {
+            @include btn;
+            margin-top: 20px;
+        }
+        h5 {
+            color: $colorWhite;
+            line-height: 1.2;
+            font-size: 22px;
+        }
+        .form-control {
+            height: 50px;
+        }
+        label {
+            color: $colorWhite;
+        }
+        select {
+            height: 50px;
+            display: block;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    }
+}
+
+.dot {
+    @include dot;
+}
+
+.dot-active {
+    background: $color1;
+}
+
+.dot-active:before {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+// SECTION 1 ---------------------
+#section1 {
+    padding: 50px 0;
+    .container {
+        padding: 0 100px;
+        .margin_top_20 {
+            margin-top: 20px;
+        }
+        .timetable {
+            p {
+                padding-right: 20px;
+                line-height: 1.8;
+                margin-top: 17px;
+            }
+            .timetable-head {
+                width: 435px;
+                height: 240px;
+                background: $color2;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                display: flex;
+                max-width: 17%;
+                align-items: center;
+                justify-content: center;
+                float: left;
+                h6 {
+                    transform: rotate(-90deg);
+                    color: white;
+                    font-size: 18px;
+                    line-height: 23px;
+                    white-space: nowrap;
+                }
+            }
+            .timetable-body {
+                background: $color4;
+                width: 83%;
+                float: right;
+                min-height: 240px;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                padding: 25px 20px;
+                a {
+                    font-size: 25px;
+                    color: $color3;
+                }
+                .table {
+                    margin-top: 20px;
+                    td {
+                        border: none;
+                    }
+                }
+                .fa {
+                    color: $color1;
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+}
+
+// SECTION 2 WHY CHOOSE DENTA-C? ---------------------
+#section2 {
+    padding-top: 80px;
+    padding-bottom: 110px;
+    .top-why-chose {
+        .line {
+            @include line;
+        }
+    }
+    .section2-icon {
+        background: $color1;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        position: relative;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+// SECTION 3 OUR SERVICES ---------------------
+#section3 {
+    padding-top: 110px;
+    padding-bottom: 80px;
+    background: $color4;
+    .our-services {
+        .line {
+            @include line;
+            margin-bottom: 30px;
+        }
+    }
+    .our-services-btn {
+        a {
+            @include btn;
+        }
+    }
+    .services-content {
+        position: relative;
+        img {
+            border-radius: 5px;
+        }
+        a {
+            font-family: Oswald-Regular;
+            font-size: 18px;
+            display: block;
+            background: $color2;
+            width: 290px;
+            border-radius: 5px;
+            padding: 15px 15px 14px 17px;
+            color: #fff;
+            position: absolute;
+            bottom: 20px;
+            right: 5px;
+            text-align: left;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: .2s ease-in-out;
+            overflow: hidden;
+            &::before {
+                content: "\f061";
+                font-family: FontAwesome;
+                font-size: 18px;
+                color: #fff;
+                // opacity: 0;
+                transition: opacity .1s ease-in-out;
+                transform: translateX(-10px) scale(0);
+                position: relative;
+                // top: 15px;
+                left: -35px;
+            }
+            &:hover {
+                background: #f57e57;
+                padding-left: 48px;
+            }
+        }
+    }
+}
+
+// SECTION 4 TESTIMONIALS ---------------------
+#section4 {
+    .row {
+        margin-right: 0;
+        .testimonials-consultation {
+            background: url(../img/home/background-05.jpg) no-repeat;
+            background-size: cover;
+            min-height: 685px;
+            .testimonials-consultation-body {
+                width: 585px;
+                float: right;
+                padding: 50px;
+                margin-top: 120px;
+                h1 {
+                    margin-top: 0;
+                    color: $colorWhite;
+                }
+                p {
+                    color: $colorWhite;
+                    line-height: 1.8;
+                    padding: 30px 0;
+                }
+                .btn {
+                    @include btn;
+                }
+            }
+        }
+    }
+    .top-title {
+        margin-bottom: 20px;
+        .top-title-line {
+            @include line;
+            margin-left: 0;
+        }
+    }
+    .slider-text {
+        margin-bottom: 50px;
+        .fa {
+            color: $color2;
+            font-size: 30px;
+        }
+        p {
+            font-style: italic;
+            font-size: 20px;
+            color: $color5;
+        }
+        .media {
+            img {
+                float: left;
+                width: 100px;
+                margin-right: 20px;
+            }
+            h5 {
+                color: $color2;
+                font-weight: bold;
+                font-size: 21px;
+                line-height: 1.2px;
+                padding-top: 10px;
+            }
+        }
+    }
+}
+
+// SECTION 5 OUR TEAM---------------------
+#section5 {
+    padding-top: 110px;
+    padding-bottom: 110px;
+    background: $color4;
+    .our-team {
+        .line {
+            @include line;
+        }
+    }
+    .team-content {
+        padding-right: 25px;
+        margin-bottom: 50px;
+        p {
+            font-size: 15px;
+            color: #868686;
+        }
+        .btn {
+            @include btn;
+            margin-top: 10px;
+        }
+        .top-item {
+            min-height: 120px;
+            .top-item-img {
+                float: left;
+                margin-right: 20px;
+            }
+            .top-item-info {
+                h5 {
+                    line-height: 1.27273;
+                    font-size: 22px;
+                    color: $color2;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                }
+                p {
+                    color: #868686;
+                    font-style: italic;
+                    line-height: 1.375;
+                    font-size: 15px;
+                    font-family: inherit;
+                    font-weight: 400;
+                }
+                .info-bottom {
+                    padding-top: 10px;
+                    .fa {
+                        font-size: 26px;
+                        color: $color2;
+                    }
+                    a {
+                        font-size: 20px;
+                        color: $color3;
+                        &:hover {
+                            color: $color1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// SECTION 6  FEATURED DENTAL NEWS---------------------
+#section6 {
+    padding-top: 110px;
+    padding-bottom: 80px;
+    .col-md-12 {
+        .line {
+            @include line;
+            margin-bottom: 30px;
+        }
+    }
+    .content-dental {
+        h3 {
+            a {
+                color: $color2;
+                text-decoration: none;
+                &:hover {
+                    color: $color1;
+                }
+            }
+        }
+        img {
+            width: 100%;
+        }
+        p {
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        a {
+            margin-right: 7px;
+        }
+        .dental-info {
+            margin-top: 20px;
+            color: #868686;
+            a {
+                color: $color1;
+                text-decoration: none;
+                &:hover {
+                    color: $color2;
+                }
+            }
+        }
+    }
+    .post-dental-btn {
+        a {
+            margin-top: 30px;
+            @include btn;
+        }
+    }
+}
+
+// SECTION 7  HOW WE CAN HELP-------------------------
+#section7 {
+    background: url(../img/background-04.jpg) no-repeat center fixed;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    .section-overlay {
+        min-height: 500px;
+        padding: 50px 0;
+        .overlay {
+            position: absolute;
+            top: 10%;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/overlay.png);
+        }
+        h1 {
+            margin-top: 70px;
+            color: $colorWhite;
+        }
+        p {
+            padding: 50px 0;
+            color: $colorWhite;
+        }
+        a {
+            @include btn;
+        }
+    }
+}
+
+// SECTION 8  Map-------------------------------------
+#section-map {
+    width: 100%;
+    height: 510px;
+    // background: #ccc;
+    .row {
+        margin: 0;
+        .col-md-12{
+            padding: 0;
+        }
+    }
+    .map-container {
+	width: 100%;
+    }
+    .map-container iframe{
+        width: 100%;
+        display: block;
+        pointer-events: none;
+        position: relative; /* IE needs a position other than static */
+    }
+    .map-container iframe.clicked{
+        pointer-events: auto;
+    }
+}
+
+// SECTION 9 -------------------------------------
+#section9 {
+    padding-top: 110px;
+    padding-bottom: 110px;
+    .fa {
+        width: 80px;
+        height: 80px;
+        line-height: 40px;
+        font-size: 30px;
+        border-radius: 50%;
+        text-align: center;
+        color: $colorWhite;
+        background: $color1;
+        padding-top: 15px;
+    }
+    a {
+        color: #434445;
+        font-size: 22px;
+    }
+}
+
+// FOOTER -------------------------------------
+footer {
+    background-color: $color2;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    p {
+        color: $colorWhite;
+        a {
+            color: $colorWhite;
+        }
+    }
+    .foot-social {
+        padding-top: 10px;
+        text-align: center;
+        .fa {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            color: #868686;
+            background: $colorWhite;
+            border-radius: 50%;
+            text-align: center;
+            transition: .3s;
+            &:hover {
+                color: $colorWhite;
+                background: $color1;
+            }
+        }
+    }
+}
+
+// ######################### TYPOGRAPHY #############################
+.nav-menu {
+    position: relative;
+    top: 30px;
+    margin: 0 auto;
+    width: 1170px;
+    font-family: Oswald-Regular;
+    background-color: $color2;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 14px 0px;
+    .menu {
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+            height: 64px;
+            align-items: center;
+            a {
+                text-decoration: none;
+                font-size: 16px;
+                color: white;
+                padding: 20px 20px;
+                font-weight: bold;
+                letter-spacing: 1.8px;
+                &:hover {
+                    background-color: $color1;
+                }
+            }
+            li {
+                .dropdown-content {
+                    background-color: white;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    display: none;
+                    padding: 20px;
+                    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 14px 0px;
+                    h4 {
+                        color: $color3;
+                        letter-spacing: 1.8px;
+                    }
+                    .nav-hover-line {
+                        @include color-line;
+                        margin: 10px 0;
+                    }
+                    .menu-body {
+                        display: flex;
+                        flex-direction: column;
+                        a {
+                            text-decoration: none;
+                            color: $color2;
+                            padding: 10px 10px;
+                            &:hover {
+                                background-color: white;
+                                color: $color1;
+                                &:before {
+                                    font-family: FontAwesome;
+                                    content: "\f105";
+                                    padding-right: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .page-down,
+                .gallery-down,
+                .blog-down {
+                    &:after {
+                        font-family: FontAwesome;
+                        content: ' \f107';
+                    }
+                }
+            }
+            .search-hover {
+                margin-right: 10px;
+            }
+            .fa-times {
+                display: none;
+            }
+            .fa-search,
+            .fa-times {
+                color: #fff;
+                font-size: 18px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+#search-form {
+    position: absolute;
+    left: 7%;
+    bottom: 66%;
+    #ftext {
+        height: 63px;
+        padding: 10px;
+        width: 1121px;
+        background: $color2;
+        border: none;
+        display: none;
+        outline: none;
+    }
+}
+
+// typography HEADER -------------------
+#header {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    // position: relative;
+    .top-info {
+        position: relative;
+        .top-icon {
+            float: left;
+            width: 50px;
+            height: 50px;
+            background: #e5e5e5;
+            border-radius: 50%;
+            text-align: center;
+            .fa {
+                font-size: 26px;
+                color: $color2;
+                padding-top: 12px;
+            }
+        }
+        .top-text {
+            position: absolute;
+            top: 4px;
+            left: 65px;
+            a {
+                font-size: 16px;
+                color: $color3;
+            }
+        }
+    }
+}
+
+#background-img {
+    background: url(../img/background-06.jpg) center/cover no-repeat;
+    height: 345px;
+    // position: relative;
+    // z-index: -1;
+    top: -30px;
+    .typography-title {
+        h1 {
+            line-height: 1.25;
+            font-size: 80px;
+            color: $colorWhite;
+            font-family: Oswald-Regular;
+        }
+        ul {
+            padding: 0;
+            margin-top: 70px;
+            li {
+                color: $colorWhite;
+                list-style: none;
+                display: inline-block;
+                padding-left: 15px;
+                &::after {
+                    font-family: FontAwesome;
+                    content: '\f061';
+                    padding-left: 20px;
+                }
+                &:last-child::after {
+                    content: '';
+                }
+                a {
+                    color: $colorWhite;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 7%;
+    padding-right: 7%;
+    border-radius: 0;
+    z-index: 10;
+}
+
+// typography-content -------------
+#typography-content {
+    p {
+        font-family: "Lato", Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #868686;
+        padding-bottom: 60px;
+    }
+    h1 {
+        line-height: 1.25;
+        font-size: 70px;
+        font-family: Oswald-Regular;
+        text-transform: uppercase;
+        color: $color3;
+        font-weight: 600;
+    }
+    h2 {
+        font-family: Oswald-Regular;
+        font-size: 55px;
+        font-weight: 500;
+    }
+    h3 {
+        font-family: Oswald-Regular;
+        line-height: 1.13043;
+        font-size: 46px;
+    }
+    h4 {
+        font-family: Oswald-Regular;
+        line-height: 1.375;
+        font-size: 30px;
+        font-weight: 400;
+    }
+    h5 {
+        font-family: Oswald-Regular;
+        line-height: 1.375;
+        font-size: 24px;
+    }
+    h6 {
+        font-family: Oswald-Regular;
+        line-height: 1.375;
+        font-size: 16px;
+    }
+    .typography-blockquote {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        h6 {
+            font-weight: bold;
+        }
+        .blockquote-line {
+            @include color-line;
+        }
+        .blockquote {
+            padding: 0;
+            border: none;
+            .quote-body {
+                padding-top: 20px;
+                &::before {
+                    font-family: FontAwesome;
+                    content: '\f10d';
+                    float: left;
+                    margin-right: 20px;
+                    color: $color2;
+                    font-size: 26px;
+                    padding-bottom: 100px;
+                }
+                p {
+                    line-height: 1.375;
+                    font-size: 24px;
+                    font-style: italic;
+                    padding: 0;
+                }
+                .media {
+                    padding-left: 35px;
+                    img {
+                        float: left;
+                        margin-right: 20px;
+                    }
+                    h5 {
+                        margin: 0;
+                        color: $color1;
+                        font-weight: bold;
+                    }
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .text-elements {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        mark {
+            background: $color2;
+        }
+        h6 {
+            font-weight: bold;
+        }
+        .text-elements-line {
+            @include color-line;
+        }
+    }
+    .ordered-lists {
+        ol,
+        ul {
+            li {
+                font-family: "Lato", Helvetica, Arial, sans-serif;
+                font-size: 15px;
+                line-height: 1.6;
+                color: #868686;
+                padding-bottom: 10px;
+            }
+        }
+        ul {
+            padding-left: 25px;
+        }
+        p {
+            padding: 0;
+        }
+        h6 {
+            font-weight: bold;
+        }
+        .ordered-lists-line {
+            @include color-line;
+            margin-bottom: 40px;
+        }
+        .orderd-icon {
+            li {
+                list-style: none;
+                &::before {
+                    font-family: FontAwesome;
+                    content: '\f105';
+                    padding-right: 10px;
+                    color: $color2;
+                }
+            }
+        }
+    }
+    .typography-icon-list {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        h6 {
+            font-weight: bold;
+        }
+        .typography-icon-list-line {
+            @include color-line;
+        }
+        .section2-icon {
+            background: $color1;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            position: relative;
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        h4 {
+            color: $color2;
+            font-size: 22px;
+        }
+    }
+    .image-centered {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        h6 {
+            font-weight: bold;
+        }
+        .image-line {
+            @include color-line;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+        }
+        p {
+            padding: 0;
+        }
+    }
+    .image-left {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        h6 {
+            font-weight: bold;
+        }
+        .image-line {
+            @include color-line;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+        }
+        p {
+            padding: 0;
+        }
+    }
+    .image-right {
+        padding-bottom: 50px;
+    }
+}
+
+// typography FOOTER ------------------
+#footer {
+    background: $color2;
+    padding-top: 50px;
+    .row {
+        margin-right: 0;
+    }
+    .footer-logo {
+        margin-bottom: 80px;
+    }
+    .footer-social {
+        .fa {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            color: #868686;
+            background: $colorWhite;
+            border-radius: 50%;
+            text-align: center;
+            transition: .3s;
+            &:hover {
+                color: $colorWhite;
+                background: $color1;
+            }
+        }
+    }
+    .footer-body {
+        p {
+            color: $colorWhite;
+        }
+        h6 {
+            color: $colorWhite;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .footer-line {
+            @include color-line;
+            margin-bottom: 15px;
+        }
+        .address {
+            .fa {
+                font-size: 20px;
+                color: $color1;
+                padding-bottom: 10px;
+            }
+            a {
+                color: $colorWhite;
+                margin-left: 10px;
+            }
+        }
+        .form-group {
+            position: relative;
+            .form-control {
+                height: 45px;
+            }
+            button {
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 45px;
+                text-transform: uppercase;
+                background: $color1;
+                font-family: Oswald-Regular;
+                color: $colorWhite;
+                &:hover {
+                    background: $color2;
+                }
+            }
+        }
+    }
+    .col-md-12 {
+        border-top: 1px solid rgb(7, 136, 167);
+        margin-top: 50px;
+        .copyright {
+            padding: 20px 0 10px 0;
+            color: $colorWhite;
+            a {
+                color: $colorWhite;
+            }
+        }
+    }
+}
+
+// ######################### FORMS #############################
+#form-content {
+    margin-top: 50px;
+    h6 {
+        font-weight: bold;
+        font-family: Oswald-Regular;
+        line-height: 1.33333;
+        font-size: 18px;
+    }
+    .login-form {
+        span {
+            padding-left: 18px;
+            font-size: 16px;
+        }
+        .login-line {
+            @include color-line;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 23px;
+            margin-bottom: 25px;
+            outline: none;
+        }
+        .login-btn {
+            @include btn;
+            border: 0;
+        }
+        .login-social {
+            padding-right: 55px;
+            float: right;
+            .fa {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 18px;
+                background: #e5e5e5;
+                color: #868686;
+                border-radius: 50%;
+                text-align: center;
+                transition: .3s;
+                &:hover {
+                    background: $color1;
+                    color: white;
+                }
+            }
+        }
+    }
+    .form-contact {
+        margin-top: 80px;
+        .contact-btn {
+            @include btn;
+            border: none;
+        }
+        .contact-line {
+            @include color-line;
+            margin-bottom: 20px;
+        }
+        textarea {
+            min-height: 200px;
+        }
+    }
+    .newsletter {
+        margin-top: 80px;
+        margin-bottom: 50px;
+        .contact-line {
+            @include color-line;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            position: relative;
+            .form-control {
+                height: 42px;
+                border-radius: 20px;
+            }
+            .newsletter-btn {
+                @include btn;
+                border: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}
+
+// ######################### BUTTONS #############################
+#buttons {
+    font-family: Oswald-Regular;
+    h6 {
+        font-weight: bold;
+        font-family: Oswald-Regular;
+        line-height: 1.5;
+        font-size: 18px;
+    }
+    .button-line {
+        @include color-line;
+        margin-bottom: 20px;
+    }
+    button {
+        color: $colorWhite;
+        background-color: $color1;
+        border-color: $color1;
+        cursor: pointer;
+        margin-right: 20px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        font-size: 18px;
+        &:hover {
+            background-color: $color2;
+            border-color: $color2;
+            color: $colorWhite;
+        }
+    }
+    .size-button,
+    .shapes-button,
+    .with-icon,
+    .shadow-button {
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+    .size-button {
+        button {
+            border-radius: 23px;
+        }
+    }
+    .square {
+        border-radius: 0;
+    }
+    .shapes-default,
+    .right,
+    .left,
+    .shadow {
+        border-radius: 23px;
+    }
+    .shadow {
+        box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+    }
+}
+
+// ######################### GRID #############################
+#grid {
+    h2 {
+        line-height: 1.13043;
+        font-size: 46px;
+        padding-bottom: 20px;
+    }
+    .grid-line {
+        @include line;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    .grid {
+        @include grid;
+    }
+}
+
+// ######################### TABELS #############################
+#tabels {
+    font-family: Lato-Regular;
+    h6 {
+        margin-top: 60px;
+        font-weight: bold;
+        line-height: 1.5;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+    .tabels-line {
+        @include color-line;
+        margin-bottom: 30px;
+    }
+    .hover-row-tables:hover {
+        cursor: pointer;
+        background: #f5f5f5;
+    }
+    .table>thead>tr>th {
+        border-bottom: 1px solid black !important;
+    }
+    .table-hover>tbody>tr:hover {
+        cursor: pointer;
+    }
+    .table>tbody>tr>td {
+        padding: 15px !important;
+    }
+    .tabels-main-color {
+        background: $color2;
+    }
+}
+
+// ######################### TAB & ACCARDION #############################
+#tab-accordions {
+    h2 {
+        line-height: 1.13043;
+        font-size: 46px;
+        padding-bottom: 20px;
+    }
+    p,
+    .tab-content {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #868686;
+    }
+    .tab-line {
+        @include line;
+        background: $color2;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    .accordion-line {
+        @include line;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    .panel-default {
+        border: none;
+        .panel-heading {
+            color: transparent;
+            background-color: transparent;
+            border-color: transparent;
+            .active {
+                border-bottom: 2px solid $color1;
+            }
+            margin-right: 20px;
+        }
+    }
+    .nav-tabs>li>a:hover {
+        border-color: white;
+    }
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        background-color: white;
+        border-color: white;
+    }
+    .tabs-left {
+        .nav-tabs {
+            .active {
+                border-right: 2px solid $color1;
+            }
+        }
+    }
+    /* custom left tabs */
+    .tabs-left>.nav-tabs {
+        border-bottom: 0;
+    }
+    .tab-content>.tab-pane,
+    .pill-content>.pill-pane {
+        display: none;
+    }
+    .tab-content>.active,
+    .pill-content>.active {
+        display: block;
+    }
+    .tabs-left>.nav-tabs>li {
+        float: none;
+    }
+    .tabs-left>.nav-tabs>li>a {
+        min-width: 74px;
+        margin-right: 0;
+        margin-bottom: 3px;
+    }
+    .tabs-left>.nav-tabs {
+        float: left;
+        margin-right: 19px;
+        border-right: 1px solid #ddd;
+    }
+    .tabs-left>.nav-tabs>li>a {
+        margin-right: -1px;
+        -webkit-border-radius: 4px 0 0 4px;
+        -moz-border-radius: 4px 0 0 4px;
+        border-radius: 4px 0 0 4px;
+    }
+    .tabs-left>.nav-tabs>li>a:hover,
+    .tabs-left>.nav-tabs>li>a:focus {
+        border-color: #ddd;
+    }
+    .tabs-left>.nav-tabs .active>a,
+    .tabs-left>.nav-tabs .active>a:hover,
+    .tabs-left>.nav-tabs .active>a:focus {
+        border-color: white;
+        *border-right-color: #ffffff;
+    }
+    .accor {
+        #integration-list {
+            font-family: 'Open Sans', sans-serif;
+            width: 100%;
+            margin: 0 auto;
+            display: table;
+        }
+        #integration-list ul {
+            padding: 0;
+            margin: 20px 0;
+            color: #555;
+        }
+        #integration-list ul>li {
+            list-style: none;
+            border-top: 1px solid #ddd;
+            display: block;
+            padding: 15px;
+            overflow: hidden;
+        }
+        #integration-list ul:last-child {
+            border-bottom: 1px solid #ddd;
+        }
+        .expand {
+            display: block;
+            text-decoration: none;
+            color: $color2;
+            cursor: pointer;
+        }
+        h2 {
+            padding-top: 10px;
+            margin: 0;
+            font-size: 17px;
+            font-weight: 400;
+        }
+        span {
+            font-size: 12.5px;
+        }
+        #right {
+            display: table;
+        }
+        #sup {
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+        }
+        .detail a {
+            text-decoration: none;
+            color: #C0392B;
+            border: 1px solid #C0392B;
+            padding: 6px 10px 5px;
+            font-size: 14px;
+        }
+        .detail {
+            margin: 10px 0 10px 0px;
+            display: none;
+            line-height: 22px;
+        }
+        .detail span {
+            margin: 0;
+        }
+        .right-arrow {
+            float: right;
+            font-size: 25px;
+        }
+        .left-arrow {
+            float: left;
+            margin-right: 30px;
+            font-size: 25px;
+            padding-top: 3px;
+        }
+        #integration-list .alternativ-accordion>li {
+            list-style: none;
+            border-top: none;
+            display: block;
+            padding: 5px;
+            overflow: hidden;
+            background: $color2;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            a {
+                color: white;
+                padding-left: 20px;
+            }
+        }
+        #integration-list .alternativ-accordion:last-child {
+            border-bottom: none;
+        }
+        .sup>span {
+            color: white;
+            padding-left: 10px;
+        }
+    }
+}
+
+// ######################### Progress Bars #############################
+#progress-bars {
+    font-family: Oswald-Regular;
+    h6 {
+        font-weight: bold;
+        line-height: 1.5;
+        font-size: 18px;
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+    .counters-line {
+        @include line;
+        margin: 15px auto 20px;
+        width: 50px;
+    }
+    .statistic-counter {
+        letter-spacing: 0.03em;
+        font-family: "Oswald", sans-serif;
+        line-height: 2;
+        font-size: 46px;
+        font-weight: 700;
+        color: $color3;
+    }
+    .single_counter {
+        p {
+            color: $color2;
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: 0.5px;
+        }
+    }
+    .progress-bars-line {
+        @include color-line;
+        margin-bottom: 20px;
+    }
+    #skillBar {
+        .progress {
+            height: 35px;
+        }
+        .progress .skill {
+            font: normal 12px "Open Sans Web";
+            line-height: 35px;
+            padding: 0;
+            margin: 0 0 0 20px;
+            text-transform: uppercase;
+        }
+        .progress .skill .val {
+            float: right;
+            font-style: normal;
+            margin: 0 20px 0 0;
+        }
+        .progress-bar {
+            text-align: left;
+            transition-duration: 3s;
+        }
+        .progress {
+            height: 16px;
+            border-radius: 10px;
+        }
+        .progress-bar-success,
+        .progress-bar-info,
+        .progress-bar-warning,
+        .progress-bar-danger {
+            background-color: $color1;
+        }
+        .bar-top-info {
+            .skill {
+                color: #868686;
+                line-height: 2;
+                font-size: 18px;
+            }
+            .skill-padding-left {
+                padding-left: 50px;
+            }
+            .skill-right {
+                line-height: 2;
+                font-size: 18px;
+                color: $color2;
+            }
+        }
+    }
+    #circle-progress {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        .circle-progress-bar {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        .circle-progress-bar div {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        .circle-progress-bar div span {
+            position: absolute;
+            font-family: Arial;
+            font-size: 25px;
+            line-height: 75px;
+            height: 75px;
+            width: 75px;
+            left: 12.5px;
+            top: 12.5px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: white;
+        }
+        .circle-progress-bar .background {
+            background-color: #f5f5f5;
+        }
+        .circle-progress-bar .rotate {
+            clip: rect(0 50px 100px 0);
+            background-color: #4b86db;
+        }
+        .circle-progress-bar .left {
+            clip: rect(0 50px 100px 0);
+            opacity: 1;
+            background-color: #b3cef6;
+        }
+        .circle-progress-bar .right {
+            clip: rect(0 50px 100px 0);
+            transform: rotate(180deg);
+            opacity: 0;
+            background-color: #4b86db;
+        }
+        @keyframes toggle {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// ######################### Calendar #############################
+#fullcalendar {
+    font-family: Oswald-Regular;
+    h2 {
+        line-height: 1.5;
+        font-size: 46px;
+        letter-spacing: 1px;
+        color: $color3;
+    }
+    .calendar-line {
+        @include line;
+        background: $color2;
+    }
+    .panel-default {
+        border-color: #fff;
+        .panel-heading {
+            background-color: #fff;
+            ul {
+                li {
+                    padding: 6px;
+                    padding-bottom: 0;
+                    a {
+                        font-size: 18px;
+                        letter-spacing: 1.5px;
+                    }
+                    &.active {
+                        border-bottom: 2px solid #f57e57;
+                    }
+                }
+            }
+        }
+    }
+    .panel,
+    .panel-heading {
+        border: none;
+    }
+    .nav-tabs>li>a:hover {
+        border-color: #fff;
+    }
+    .nav-tabs>li.active>a {
+        border: none;
+    }
+    .nav-tabs>li.active>a:hover {
+        background-color: #fff;
+    }
+    .nav>li>a:hover {
+        background-color: #fff;
+    }
+    .calendar {
+        #calendar {
+            .fc-day-number {
+                padding: 20px;
+                color: black;
+                font-size: 18px;
+            }
+            .fc-event-container {
+                span {
+                    display: none;
+                }
+            }
+            .fc-button-group {
+                position: absolute;
+                top: 2%;
+                left: 46%;
+                .fc-prev-button {
+                    position: relative;
+                    right: 300%;
+                }
+                .fc-next-button {
+                    position: relative;
+                    left: 300%;
+                }
+                button {
+                    border: none;
+                    background: transparent;
+                    outline: none;
+                    box-shadow: none;
+                    span {
+                        color: $color1;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// ###### MEDIA GUERY
+
+// Extra small devices (portrait phones, less than 576px) -------------------------------------------------------------------------------------
+@media (max-width: 575px) {
+
+ h1{
+        font-size: 30px;
+    }
+// ############################---HOME--- ############################
+// header section ------------------------------
+header {
+    text-align: center;
+    .header-logo, .header-icon, .header-phone, .info-hd{
+            display: none;
+        }
+    .header-body{
+        p{
+            display: none;
+        }
+    }
+    .header-consultation{
+        margin:20px auto;
+    }
+    .padding_top_70{
+        padding-top: 0;
+    }
+    .top-slider{
+        .container{
+            padding-top: 0;
+            .slider__dots{
+                margin-top: 20px;
+    }
+        }
+    }
+    
+    
+}
+// SECTION 2 WHY CHOOSE DENTA-C? ---------------------
+#section2 {
+    padding: 10%;
+    .media{
+        margin-bottom: 10%;
+    }
+}
+// SECTION 2 end
+// SECTION 3 OUR SERVICES --------------
+#section3 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .services-content{
+        text-align: center;
+        padding-bottom: 30px;
+        a{
+            position: relative;
+            left: 21%;
+            top: 0;
+            width: 320px;
+        }
+    }
+}
+// SECTION 3 end
+// SECTION 4 TESTIMONIALS -------------
+#section4 {
+    padding-bottom: 40px;
+    .col-md-6{
+        padding: 0;
+    }
+    .row {
+        .testimonials-consultation{
+        min-height: 450px;
+            .testimonials-consultation-body{
+                text-align: center;
+                float: none;
+                margin-top: 0;
+            }
+        }
+    }
+    .padding-top-100{
+        padding-top: 40px;
+    }
+    .top-title{
+        text-align: center;
+        .top-title-line{
+            margin-left: auto;
+        }
+    }
+    .slider-text{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
+// SECTION 4 end
+// SECTION 5 OUR TEAM start------------
+#section5 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .team-content{
+        padding-left: 11%;
+    }
+}
+// SECTION 5 end
+// SECTION 6  FEATURED DENTAL NEWS start----------
+#section6 {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    .margin-top-30{
+        margin-top: 0;
+    }
+    .content-dental{
+        padding: 30px;
+        img{
+            width: 100%;
+            
+        }
+    }
+    .post-dental-btn{
+        .btn{
+            margin-top: 15px;
+        }
+    }
+}
+// SECTION 6 end
+// SECTION 7  HOW WE CAN HELP start--------
+#section7 {
+     .section-overlay {
+        min-height: 350px;
+        padding: 50px 0;
+        h1 {
+            margin-top: 50px;
+        }
+    }
+}
+// SECTION 7 end
+// SECTION 8  Map start
+#section-map {
+    width: 100%;
+    height: 350px;
+    iframe{
+        height: 350px;
+    }
+}
+// SECTION 8  Map end
+// section9 start
+#section9 {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    .fa{
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+}
+// section9 end
+
+// footer start
+footer{
+    padding-top:40px;
+    padding-bottom: 40px;
+    .foot-logo{
+    text-align: center;
+    margin-bottom: 30px;
+    }
+    .foot-social{
+        position: relative;
+        top: -60px;
+        left: 14px;
+    }
+    .foot-media{
+        position: relative;
+        top: 90px;
+    }
+}
+// fotter end
+
+// ############################---HOME END--- ############################
+
+// ######################### TYPOGRAPHY #############################
+#background-img{
+    text-align: center;
+    height: 190px;
+    .margin-top-100{
+        margin-top: 0;
+    }
+    .typography-title{
+        margin-top: 40px;
+        h1{
+            font-size: 36px;
+        }
+        ul{
+            margin-top: 40px;
+        }
+    }
+    
+}
+.nav-menu{
+    display: none;
+}
+#typography-content{
+    padding: 3% 10%;
+    h1{
+        font-size: 36px;
+    }
+    h2{
+        font-size: 32px;
+    }
+    h3{
+        font-size: 26px;
+    }
+    h4{
+        font-size: 24px;
+    }
+    h5{
+        font-size: 20px;
+    }
+    h6{
+        font-size: 17px;
+    }
+}
+
+// typography FOOTER ------------------
+#footer {
+    .row {
+        margin-right: 0;
+    }
+    .copyright{
+        text-align: center;
+    }
+    .footer-media-logo{
+        text-align: center;
+        .footer-logo{
+            margin-bottom: 30px;
+        }
+    }
+    .footer-body{
+        padding: 5% 15%;
+    }
+ }
+
+// ######################### TYPOGRAPHY END #############################
+
+// ######################### FORMS start #############################
+
+#form-content{
+    padding: 4% 9%;
+}
+// ######################### FORMS end #############################
+
+// ######################### BUTTON start #############################
+
+#buttons{
+    padding: 0 15%;
+    text-align: center;
+    button{
+        margin:10px;
+    }
+}
+// ######################### BUTTON end #############################
+
+}
+
+
+
+// Small devices (landscape phones, less than 768px) -------------------------------------------------------------------------------------
+@media (max-width: 767px) {
+    h1{
+        font-size: 30px;
+    }
+    // ############################---HOME--- ############################
+// header section ------------------------------
+header {
+    text-align: center;
+    .header-logo, .header-icon, .header-phone, .info-hd{
+            display: none;
+        }
+    .header-body{
+        p{
+            display: none;
+        }
+    }
+    .header-consultation{
+        margin:20px auto;
+    }
+    .padding_top_70{
+        padding-top: 0;
+    }
+    .top-slider{
+        .container{
+            padding-top: 0;
+            .slider__dots{
+                margin-top: 20px;
+    }
+        }
+    }
+    
+    
+}
+// SECTION 2 WHY CHOOSE DENTA-C? ---------------------
+#section2 {
+    padding: 10%;
+    .media{
+        margin-bottom: 10%;
+    }
+}
+// SECTION 2 end
+// SECTION 3 OUR SERVICES ----------
+#section3 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .services-content{
+        text-align: center;
+        padding-bottom: 30px;
+        a{
+            position: relative;
+            left: 21%;
+            top: 0;
+            width: 320px;
+        }
+    }
+}
+// SECTION 3 end
+// SECTION 4 TESTIMONIALS ---------
+#section4 {
+    padding-bottom: 40px;
+    .col-md-6{
+        padding: 0;
+    }
+    .row {
+        .testimonials-consultation{
+        min-height: 450px;
+            .testimonials-consultation-body{
+                text-align: center;
+                float: none;
+                margin-top: 0;
+            }
+        }
+    }
+    .padding-top-100{
+        padding-top: 40px;
+    }
+    .top-title{
+        text-align: center;
+        .top-title-line{
+            margin-left: auto;
+        }
+    }
+    .slider-text{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
+// SECTION 4 end
+// SECTION 5 OUR TEAM start--------
+#section5 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .team-content{
+        padding-left: 11%;
+    }
+}
+// SECTION 5 end
+// SECTION 6  FEATURED DENTAL NEWS start-----
+#section6 {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    .margin-top-30{
+        margin-top: 0;
+    }
+    .content-dental{
+        padding: 30px;
+        img{
+            width: 100%;
+            
+        }
+    }
+    .post-dental-btn{
+        .btn{
+            margin-top: 15px;
+        }
+    }
+}
+// SECTION 6 end
+// SECTION 7  HOW WE CAN HELP start--------
+#section7 {
+     .section-overlay {
+        min-height: 350px;
+        padding: 50px 0;
+        h1 {
+            margin-top: 50px;
+        }
+    }
+}
+// SECTION 7 end
+// SECTION 8  Map start
+#section-map {
+    width: 100%;
+    height: 350px;
+    iframe{
+        height: 350px;
+    }
+}
+// SECTION 8  Map end
+// section9 start
+#section9 {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    .fa{
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+}
+// section9 end
+
+// footer start
+footer{
+    padding-top:40px;
+    padding-bottom: 40px;
+    .foot-logo{
+    text-align: center;
+    margin-bottom: 30px;
+    }
+    .foot-social{
+        position: relative;
+        top: -60px;
+        left: 14px;
+    }
+    .foot-media{
+        position: relative;
+        top: 90px;
+    }
+}
+// fotter end
+
+    // ############################---HOME END--- ############################
+
+
+// ######################### TYPOGRAPHY #############################
+#background-img{
+    text-align: center;
+    height: 190px;
+    .margin-top-100{
+        margin-top: 0;
+    }
+    .typography-title{
+        margin-top: 40px;
+        h1{
+            font-size: 36px;
+        }
+        ul{
+            margin-top: 40px;
+        }
+    }
+    
+}
+.nav-menu{
+    display: none;
+}
+
+#typography-content{
+    padding: 3% 10%;
+    h1{
+        font-size: 36px;
+    }
+    h2{
+        font-size: 32px;
+    }
+    h3{
+        font-size: 26px;
+    }
+    h4{
+        font-size: 24px;
+    }
+    h5{
+        font-size: 20px;
+    }
+    h6{
+        font-size: 17px;
+    }
+}
+
+// typography FOOTER ------------------
+#footer {
+    .row {
+        margin-right: 0;
+    }
+    .copyright{
+        text-align: center;
+    }
+    .footer-media-logo{
+        text-align: center;
+        .footer-logo{
+            margin-bottom: 30px;
+        }
+    }
+    .footer-body{
+        padding: 5% 15%;
+    }
+    }
+// ######################### TYPOGRAPHY END #############################
+// ######################### FORMS start #############################
+
+#form-content{
+    padding: 4% 9%;
+}
+// ######################### FORMS end #############################
+
+// ######################### BUTTON start #############################
+
+#buttons{
+    padding: 0 15%;
+    text-align: center;
+    button{
+        margin:10px;
+    }
+}
+// ######################### BUTTON end #############################
+
+
+
+}
+
+// Medium devices (tablets, less than 992px)-------------------------------------------------------------------------------------
+@media (max-width: 991px) {
+    h1{
+        font-size: 30px;
+    }
+    // ############################---HOME--- ############################
+    // header section ------------------------------
+header {
+    text-align: center;
+    .header-logo, .header-icon, .header-phone, .info-hd{
+            display: none;
+        }
+    .header-body{
+        p{
+            display: none;
+        }
+    }
+    .header-consultation{
+        margin:20px auto;
+    }
+    .padding_top_70{
+        padding-top: 0;
+    }
+    .top-slider{
+        .container{
+            padding-top: 0;
+            .slider__dots{
+                margin-top: 20px;
+    }
+        }
+    }
+    
+    
+}
+// SECTION 2 WHY CHOOSE DENTA-C? ---------------------
+#section2 {
+    padding: 10%;
+    .media{
+        margin-bottom: 10%;
+    }
+}
+// SECTION 2 end
+// SECTION 3 OUR SERVICES -----------
+#section3 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .services-content{
+        text-align: center;
+        padding-bottom: 30px;
+        a{
+            position: relative;
+            left: 21%;
+            top: 0;
+            width: 320px;
+        }
+    }
+}
+// SECTION 3 end
+// SECTION 4 TESTIMONIALS ------
+#section4 {
+    padding-bottom: 40px;
+    .col-md-6{
+        padding: 0;
+    }
+    .row {
+        .testimonials-consultation{
+        min-height: 450px;
+            .testimonials-consultation-body{
+                text-align: center;
+                float: none;
+                margin-top: 0;
+            }
+        }
+    }
+    .padding-top-100{
+        padding-top: 40px;
+    }
+    .top-title{
+        text-align: center;
+        .top-title-line{
+            margin-left: auto;
+        }
+    }
+    .slider-text{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
+// SECTION 4 end
+// SECTION 5 OUR TEAM start------------
+#section5 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .team-content{
+        padding-left: 11%;
+    }
+}
+// SECTION 5 end
+// SECTION 6  FEATURED DENTAL NEWS start---------------------
+#section6 {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    .margin-top-30{
+        margin-top: 0;
+    }
+    .content-dental{
+        padding: 30px;
+        img{
+            width: 100%;
+            
+        }
+    }
+    .post-dental-btn{
+        .btn{
+            margin-top: 15px;
+        }
+    }
+}
+// SECTION 6 end
+// SECTION 7  HOW WE CAN HELP start--------
+#section7 {
+     .section-overlay {
+        min-height: 350px;
+        padding: 50px 0;
+        h1 {
+            margin-top: 50px;
+        }
+    }
+}
+// SECTION 7 end
+// SECTION 8  Map start
+#section-map {
+    width: 100%;
+    height: 350px;
+    iframe{
+        height: 350px;
+    }
+}
+// SECTION 8  Map end
+
+// section9 start
+#section9 {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    .fa{
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+}
+// section9 end
+
+// footer start
+footer{
+    padding-top:40px;
+    padding-bottom: 40px;
+    .foot-logo{
+    text-align: center;
+    margin-bottom: 30px;
+    }
+    .foot-social{
+        position: relative;
+        top: -60px;
+        left: 14px;
+    }
+    .foot-media{
+        position: relative;
+        top: 90px;
+    }
+}
+// fotter end
+
+// ############################---HOME END--- ############################
+
+
+// ######################### TYPOGRAPHY #############################
+#background-img{
+    text-align: center;
+    height: 190px;
+    .margin-top-100{
+        margin-top: 0;
+    }
+    .typography-title{
+        margin-top: 40px;
+        h1{
+            font-size: 36px;
+        }
+        ul{
+            margin-top: 40px;
+        }
+    }
+    
+}
+
+.nav-menu{
+    display: none;
+}
+
+#typography-content{
+    padding: 3% 10%;
+    h1{
+        font-size: 36px;
+    }
+    h2{
+        font-size: 32px;
+    }
+    h3{
+        font-size: 26px;
+    }
+    h4{
+        font-size: 24px;
+    }
+    h5{
+        font-size: 20px;
+    }
+    h6{
+        font-size: 17px;
+    }
+}
+
+// typography FOOTER ------------------
+#footer {
+    .row {
+        margin-right: 0;
+    }
+    .copyright{
+        text-align: center;
+    }
+    .footer-media-logo{
+        text-align: center;
+        .footer-logo{
+            margin-bottom: 30px;
+        }
+    }
+    .footer-body{
+        padding: 5% 15%;
+    }
+ }
+
+// ######################### TYPOGRAPHY END #############################
+// ######################### FORMS start #############################
+
+#form-content{
+    padding: 4% 9%;
+}
+// ######################### FORMS end #############################
+
+// ######################### BUTTON start #############################
+
+#buttons{
+    padding: 0 15%;
+    text-align: center;
+    button{
+        margin:10px;
+    }
+}
+// ######################### BUTTON end #############################
+
+
+}
